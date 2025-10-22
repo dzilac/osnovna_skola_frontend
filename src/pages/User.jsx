@@ -19,7 +19,7 @@ const User = () => {
 
   const fetchChildrenCount = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/parents/my-children', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/parents/my-children`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'

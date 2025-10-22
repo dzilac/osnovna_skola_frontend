@@ -144,8 +144,8 @@ const TrackChild = () => {
     try {
       setLoading(true);
       setError(null);
-      
-      const response = await fetch('http://localhost:5000/api/parents/my-children', {
+
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/parents/my-children`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -168,7 +168,7 @@ const TrackChild = () => {
 
   const fetchChildLocation = async (childId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/location/child/${childId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/location/child/${childId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'

@@ -74,7 +74,7 @@ export default function AddLostItemForm({ type, onSuccess }) {
       console.log("description:", formData.description);
       console.log("image:", imageFile ? "postoji" : "ne postoji");
 
-      const response = await fetch("http://localhost:5000/api/items", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/items`, {
         method: "POST",
         body: data
       });

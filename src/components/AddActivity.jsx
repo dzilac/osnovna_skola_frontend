@@ -60,7 +60,7 @@ const AddActivity = () => {
         data.append('image', formData.image);
       }
 
-      const response = await fetch('http://localhost:5000/api/admin/add-activity', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/add-activity`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${user.token}`

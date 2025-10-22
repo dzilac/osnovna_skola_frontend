@@ -31,7 +31,7 @@ const AddPrivateLesson = () => {
 
   const fetchProfessors = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/admin/professors', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/professors`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ const AddPrivateLesson = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/add-private-lesson', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/add-private-lesson`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${user.token}`,

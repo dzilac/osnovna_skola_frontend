@@ -22,7 +22,7 @@ export default function QuizPage() {
 
   useEffect(() => {
     if (!id) return;
-    fetch(`http://localhost:5000/api/kviz/${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/kviz/${id}`)
       .then((res) => res.json())
       .then((data) => setKviz(data))
       .catch((err) => console.error("Greška pri učitavanju:", err));
@@ -31,7 +31,7 @@ export default function QuizPage() {
   useEffect(() => {
     if (!userId || !id) return;
 
-    fetch(`http://localhost:5000/api/user/${userId}/completed`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/user/${userId}/completed`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -44,7 +44,7 @@ export default function QuizPage() {
 
   useEffect(() => {
     if (finished && userId && id) {
-      fetch(`http://localhost:5000/api/kviz/${id}/submit`, {
+      fetch(`${process.env.REACT_APP_API_URL}/api/kviz/${id}/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: userId, score }),

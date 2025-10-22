@@ -13,7 +13,7 @@ export default function QuizzesPage() {
     if (loading || !user) return;
 
     const grade = user.grade || 0;
-    fetch(`http://localhost:5000/api/kvizovi/${grade}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/kvizovi/${grade}`)
       .then((res) => res.json())
       .then((data) => {
         setKvizovi(data);

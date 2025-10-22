@@ -16,7 +16,7 @@ export default function DeteDashboard() {
 
   useEffect(() => {
     if (user?.grade) {
-      fetch(`http://localhost:5000/api/kvizovi/${user.grade}`)
+      fetch(`${process.env.REACT_APP_API_URL}/api/kvizovi/${user.grade}`)
         .then((res) => res.json())
         .then((data) => setKvizovi(data))
         .catch((err) => console.error(err));
@@ -25,7 +25,7 @@ export default function DeteDashboard() {
 
   useEffect(() => {
     if (user?.id) {
-      fetch(`http://localhost:5000/api/user/${user.id}/completed`)
+      fetch(`${process.env.REACT_APP_API_URL}/api/user/${user.id}/completed`)
         .then((res) => res.json())
         .then((data) => {
           if (Array.isArray(data)) {

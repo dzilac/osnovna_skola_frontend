@@ -67,7 +67,7 @@ export default function ChangePassword() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/users/change-password", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/change-password`, {
         method: "PUT",
         headers: {
           "Authorization": `Bearer ${user.token}`,

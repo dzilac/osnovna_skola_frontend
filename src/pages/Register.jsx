@@ -46,7 +46,7 @@ export default function Register() {
         data.append("profileImage", form.profileImage);
       }
 
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
         method: "POST",
         body: data,
       });

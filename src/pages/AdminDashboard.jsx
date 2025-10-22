@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   const fetchPendingUsers = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/admin/pending-users', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/pending-users`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
   const fetchAllUsers = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/admin/all-users', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/all-users`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ const AdminDashboard = () => {
   const fetchActivities = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/admin/activities', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/activities`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -97,7 +97,7 @@ const AdminDashboard = () => {
   const fetchPrivateLessons = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/admin/private-lessons', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/private-lessons`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -117,7 +117,7 @@ const AdminDashboard = () => {
 
   const handleVerify = async (userId, approve) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/verify-user/${userId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/verify-user/${userId}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${user.token}`,
@@ -140,7 +140,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/delete-user/${userId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/delete-user/${userId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`,
@@ -163,7 +163,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/delete-activity/${activityId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/delete-activity/${activityId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`,
@@ -186,7 +186,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/delete-private-lesson/${lessonId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/delete-private-lesson/${lessonId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`,
