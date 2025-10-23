@@ -62,7 +62,7 @@ const Extracurriculars = () => {
         return;
       }
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/activities`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/activities`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -112,7 +112,7 @@ const Extracurriculars = () => {
         return;
       }
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/children`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/children`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -160,7 +160,7 @@ const Extracurriculars = () => {
         return;
       }
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/activities/${activityId}/enroll`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/activities/${activityId}/enroll`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

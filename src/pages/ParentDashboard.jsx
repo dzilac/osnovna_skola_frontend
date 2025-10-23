@@ -23,7 +23,7 @@ const ParentDashboard = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/parents/my-children`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/parents/my-children`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ const ParentDashboard = () => {
 
   const fetchChildDetails = async (childId) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/parents/child/${childId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/parents/child/${childId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const ParentDashboard = () => {
   const fetchAIAnalysis = async (childId) => {
     try {
       setLoadingAI(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/ai/analyze-child/${childId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/ai/analyze-child/${childId}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${user.token}`,

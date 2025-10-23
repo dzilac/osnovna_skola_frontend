@@ -51,7 +51,7 @@ const RegisterChild = () => {
         data.append('profileImage', formData.profileImage);
       }
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/register-child`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/register-child`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${user.token}`

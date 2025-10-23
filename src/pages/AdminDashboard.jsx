@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   const fetchPendingUsers = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/pending-users`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/pending-users`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
   const fetchAllUsers = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/all-users`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/all-users`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ const AdminDashboard = () => {
   const fetchActivities = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/activities`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/activities`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -97,7 +97,7 @@ const AdminDashboard = () => {
   const fetchPrivateLessons = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/private-lessons`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/private-lessons`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -163,7 +163,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/delete-activity/${activityId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/admin/delete-activity/${activityId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`,

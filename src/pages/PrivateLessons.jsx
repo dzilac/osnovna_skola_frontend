@@ -54,7 +54,7 @@ const PrivateLessons = () => {
         return;
       }
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/private-lessons`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/private-lessons`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -92,7 +92,7 @@ const PrivateLessons = () => {
         return;
       }
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/children`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/children`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

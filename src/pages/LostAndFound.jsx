@@ -22,7 +22,7 @@ export default function LostAndFound() {
   }, []);
 
   const loadItems = () => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/items`)
+    fetch(`${process.env.REACT_APP_API_URL}/items`)
       .then(res => {
         if (!res.ok) throw new Error("Greška prilikom dohvaćanja");
         return res.json();
